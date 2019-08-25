@@ -70,10 +70,10 @@ pip freeze > requirements-dev.txt
 ## Create a file requirements.txt file and include reference to previows file and add two more requirements
 * -r requirements-dev.txt
 * gunicorn
-* psycopg2
+* psycopg2   //Recorte e insrita aqui o psycopg2==... do dev pois ele pode querer usar outro BD 
 
 ## Create a file Procfile and add the following code
-* web: gunicorn website.wsgi --log-file -
+* web: gunicorn WEBSITE.wsgi --log-file -    //WEBSITE == nome da pasta do projeto
 
 ## Create a file runtime.txt and add the following core
 * python-3.6.0
