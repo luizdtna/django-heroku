@@ -84,8 +84,7 @@ You should install heroku CLI tools in your computer previously ( See http://bit
 Remember to grab the address of the app in this point
 
 ## Setting the allowed hosts
-* include your address at the ALLOWED_HOSTS directives in settings.py - Just the domain, make sure that you will take the protocol and slashes from the string
-
+* include your address at the ALLOWED_HOSTS directives in settings.py - Retire o https:// Deixe somente o nome do nomedodominio.heroku....
 ## Heroku install config plugin
 * heroku plugins:install heroku-config
 
