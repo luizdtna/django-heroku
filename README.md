@@ -113,4 +113,4 @@ Insert .env in gitignore
 * heroku config:set DISABLE_COLLECTSTATIC=1
 
 ### Changing a specific configuration
-* heroku config:set DEBUG=True
+* heroku config:set DEBUG=False
