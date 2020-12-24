@@ -43,6 +43,7 @@ Minimal configuration to host a Django project at Heroku
 
 ## Configuring the Data Base
 * pip install dj-database-url
+* pip install psycopg2-binary
 
 ### Settings.py
 * from dj_database_url import parse as dburl
@@ -67,13 +68,15 @@ pip install dj-static
 ## Create a requirements-dev.txt
 pip freeze > requirements-dev.txt
 
+## Create a file Procfile and add the following code
+* pip install gunicorn
+
+* web: gunicorn WEBSITE.wsgi --log-file -    //WEBSITE == nome da pasta do projeto
+
 ## Create a file requirements.txt file and include reference to previows file and add two more requirements
 * -r requirements-dev.txt
 * gunicorn
 * psycopg2   //Recorte e insrita aqui o psycopg2==... do dev pois ele pode querer usar outro BD 
-
-## Create a file Procfile and add the following code
-* web: gunicorn WEBSITE.wsgi --log-file -    //WEBSITE == nome da pasta do projeto
 
 ## Create a file runtime.txt and add the following core
 * python-3.6.0 (Atualmente está na 3.8.2)
@@ -100,7 +103,12 @@ Insert .env in gitignore
 ## Publishing the app
 * git add .
 * git commit -m 'Configuring the app'
-* git push heroku master --force
+* git push heroku master --force (you don't need --force)
+
+If happens that error:
+'heroku' does not appear to be a git repository'
+run this:
+* heroku git:remote -a nomedodominio
 
 ## Creating the data base
 * heroku run python3 manage.py migrate
