@@ -76,7 +76,7 @@ pip freeze > requirements-dev.txt
 * web: gunicorn WEBSITE.wsgi --log-file -    //WEBSITE == nome da pasta do projeto
 
 ## Create a file runtime.txt and add the following core
-* python-3.6.0
+* python-3.6.0 (Atualmente está na 3.8.2)
 
 ## Creating the app at Heroku
 You should install heroku CLI tools in your computer previously ( See http://bit.ly/2jCgJYW ) 
@@ -90,12 +90,12 @@ Remember to grab the address of the app in this point
 
 ### Sending configs from .env to Heroku ( You have to be inside tha folther where .env files is)
 * heroku plugins:install heroku-config
-* heroku config:push
+* heroku config:push --app=nomedodominio
 
 Insert .env in gitignore
 
 ### To show heroku configs do
-* heroku config ---- view on machine
+* heroku config --app=nomedodominio  (view on machine)
 
 ## Publishing the app
 * git add .
